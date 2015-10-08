@@ -1,0 +1,3 @@
+PostgreSQL User\Password:
+User: postgres
+Password: postgresCAPPING

@@ -36,3 +36,22 @@ CREATE TABLE CoursesTaken(
 	
 	primary key(studentID, courseID)
 );
+
+CREATE TABLE Majors(
+	MID				serial primary key,
+	title			text unique not null
+);
+
+CREATE TABLE Requirements(
+	RID				serial primary key,
+	major			int not null unique references Majors(MID),
+	subject 		text unique not null,
+	creditValue		int not null
+);
+
+CREATE TABLE Equivalent(
+	courseID		int not null references Course(CID),
+	requireID		int not null references Requirements(RID),
+	
+	primary key(courseID, requireID)
+);

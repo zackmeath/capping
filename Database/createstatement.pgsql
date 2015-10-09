@@ -11,7 +11,7 @@ DROP TABLE IF EXISTS Equivalent;
 
 CREATE TABLE School(
 	ScID 			serial primary key,
-	SchName			text not null
+	ScName			text not null
 );
 
 CREATE TABLE Student(
@@ -31,8 +31,8 @@ CREATE TABLE Course(
 );
 
 CREATE TABLE CoursesTaken(
-	studentID		int not null references Student(StID),
-	courseID		int not null references Course(CID),
+	StID		int not null references Student(StID),
+	CID		int not null references Course(CID),
 	
 	primary key(studentID, courseID)
 );

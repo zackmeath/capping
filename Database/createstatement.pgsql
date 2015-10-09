@@ -20,12 +20,12 @@ CREATE TABLE Users(
 );
 
 CREATE TABLE School(
-	ScID 				serial primary key references Users(UID),
+	ScID 				serial primary key,
 	ScName				text not null
 );
 
 CREATE TABLE Student(
-	StID				serial primary key,
+	StID				serial primary key references Users(UID),
 	currentCollege		int not null references School(ScID),
 	intendedStartDate	date not null
 );

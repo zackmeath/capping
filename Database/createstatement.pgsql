@@ -52,9 +52,15 @@ CREATE TABLE Major(
 
 CREATE TABLE Requirements(
 	RID					serial primary key,
-	MID					int not null unique references Major(MID),
 	subject 			text unique not null,
 	creditValue			int not null
+);
+
+CREATE TABLE MajorRequirement(
+	MID					int not null references Major(MID),
+	RID					int not null references Requirements(RID)
+	
+	primary key(MID, RID)	
 );
 
 CREATE TABLE Equivalent(

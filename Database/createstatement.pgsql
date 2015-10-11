@@ -4,6 +4,7 @@ DROP TABLE IF EXISTS Student;
 DROP TABLE IF EXISTS Equivalent;
 DROP TABLE IF EXISTS Course;
 DROP TABLE IF EXISTS School;
+DROP TABLE IF EXISTS MajorRequirement;
 DROP TABLE IF EXISTS Requirements;
 DROP TABLE IF EXISTS Major;
 DROP TABLE IF EXISTS Users;
@@ -58,7 +59,7 @@ CREATE TABLE Requirements(
 
 CREATE TABLE MajorRequirement(
 	MID					int not null references Major(MID),
-	RID					int not null references Requirements(RID)
+	RID					int not null references Requirements(RID),
 	
 	primary key(MID, RID)	
 );

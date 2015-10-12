@@ -5,7 +5,7 @@ DROP TABLE IF EXISTS Equivalent;
 DROP TABLE IF EXISTS Course;
 DROP TABLE IF EXISTS School;
 DROP TABLE IF EXISTS MajorRequirement;
-DROP TABLE IF EXISTS Requirements;
+DROP TABLE IF EXISTS Requirement;
 DROP TABLE IF EXISTS Major;
 DROP TABLE IF EXISTS Users;
 
@@ -33,9 +33,9 @@ CREATE TABLE Student(
 
 CREATE TABLE Course(
 	CID					serial primary key,
-	SID					int not null references School(ScID),
-	subject				text unique not null,
-	courseNum			text unique not null,
+	ScID				int not null references School(ScID),
+	subject				text not null,
+	courseNum			text not null,
 	isAccepted			boolean not null
 );
 
@@ -51,22 +51,23 @@ CREATE TABLE Major(
 	title				text unique not null
 );
 
-CREATE TABLE Requirements(
+CREATE TABLE Requirement(
 	RID					serial primary key,
-	subject 			text unique not null,
+	subject 			text not null,
+	courseNum			text not null,
 	creditValue			int not null
 );
 
 CREATE TABLE MajorRequirement(
 	MID					int not null references Major(MID),
-	RID					int not null references Requirements(RID),
+	RID					int not null references Requirement(RID),
 	
 	primary key(MID, RID)	
 );
 
 CREATE TABLE Equivalent(
 	CID					int not null references Course(CID),
-	RID					int not null references Requirements(RID),
+	RID					int not null references Requirement(RID),
 		
 	primary key(CID, RID)
 );

@@ -50,7 +50,7 @@ function insertMaristRequirements(courses){
     writeLine(header);
     for (var i = 0; i < courses.length; i++){
         var course = courses[i];
-        var insertStatement = '("' + course.subject + '", ' + course.number + ', 3),' ;
+        var insertStatement = '("' + course.subject + '", "' + course.number + '", 3),' ;
         writeLine(insertStatement);
     }
     writeLine(';\n');
@@ -61,7 +61,7 @@ function insertOtherCourses(courses){
     writeLine(header);
     for (var i = 0; i < courses.length; i++){
         var course = courses[i];
-        var insertStatement = '("Dutchess Community College", "' + course.subject + '", ' + course.number + '", true),' ;
+        var insertStatement = '("Dutchess Community College", "' + course.subject + '", "' + course.number + '", true),' ;
         writeLine(insertStatement);
     }
     writeLine(';\n');
@@ -78,7 +78,6 @@ function insertEquivalencies(equivalencies, maristCourses, otherCourses){
                 if (compareObjects(eq.maristCourse, marist) && compareObjects(eq.otherCourse, other)){
                     var line = '(' + (k+1) + ', ' + (j+1) + '),';
                     writeLine(line);
-                    break;
                 }
             }
         }

@@ -14,6 +14,16 @@
     <script src="https://fb.me/JSXTransformer-0.13.3.js"></script>
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
+    
+    <link href="css/bootstrap-combobox.css" rel="stylesheet">
+    <script src="/js/bootstrap-combobox.js" type="text/javascript"></script>
+    <script src="/js/jquery-2.1.4.min.js" type="text/javascript"></script>
+    
+    <script type="text/javascript">
+      $(document).ready(function(){
+        $('.combobox').combobox();
+      });
+    </script>
 
   
   </head>
@@ -32,13 +42,13 @@
 
     <div class="container">
         <h1>Courses</h1>
-        <table class="table table-hover">
+        <table class="table table-hover table-bordered table-responsive">
             <thead>
               <tr>
                 <th>Subject</th>
                 <th>Course Number</th>
                 <th>Course Name</th>
-                <th> </th>
+                <th> <button type="button" class="btn btn-success" data-toggle="modal" data-target="#coursesModal">Add Courses</button> </th>
               </tr>
             </thead>
             <tbody>
@@ -50,17 +60,58 @@
               </tr>
             </tbody>
           </table>
-    <div>
+    </div>
 
+            <!-- Modal -->
+            <div class="modal fade" id="coursesModal" tabindex="-1" role="dialog" aria-labelledby="coursesModal">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Add Courses</h4>
+                  </div>
+                  <div class="modal-body">
+                        <table class="table">
+                        <tbody>
+                          <tr>
+                            <td>
+<!--https://github.com/danielfarrell/bootstrap-combobox/-->
+                                <select class="combobox">
+                                  <option></option>
+                                  <option value="PA">Pennsylvania</option>
+                                  <option value="CT">Connecticut</option>
+                                  <option value="NY">New York</option>
+                                  <option value="MD">Maryland</option>
+                                  <option value="VA">Virginia</option>
+                                </select>
+                                
+                                
+                                
+                            </td>
+                            <td>101</td>
+                            <td><a href="#blank">Delete</a></td>
+                          </tr>
+                        </tbody>
+                      </table>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+      
+
+      
     <div class="container">
         <h1>Evaluations</h1>
-        <table class="table table-hover">
+        <table class="table table-hover table-bordered table-responsive">
             <thead>
               <tr>
                 <th>Major</th>
                 <th>Credits Accepted</th>
                 <th>Date Created</th>
-                <th> </th>
+                <th> <button type="button" class="btn btn-success" data-toggle="modal" data-target="#evalModal">New Evaluation</button> </th>
               </tr>
             </thead>
             <tbody>
@@ -72,8 +123,41 @@
               </tr>
             </tbody>
           </table>
-    <div>
+    </div>
     
+      
+              <!-- Modal -->
+            <div class="modal fade" id="evalModal" tabindex="-1" role="dialog" aria-labelledby="evalModal">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">New Evaluation</h4>
+                  </div>
+                  <div class="modal-body">
+                    ...
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+      
+      
+      
+      
+    <!--
+    <BootstrapTable data={products} striped={true} hover={true} condensed={true}>
+      <TableHeaderColumn dataField="id" isKey={true}>Product ID</TableHeaderColumn>
+      <TableHeaderColumn dataField="name">Product Name</TableHeaderColumn>
+      <TableHeaderColumn dataField="price">Product Price</TableHeaderColumn>
+    </BootstrapTable>
+    -->  
+      
+      
+      
+      
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->

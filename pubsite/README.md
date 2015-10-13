@@ -1,5 +1,5 @@
-[ ] Sign up page
-[ ] Course modal
-[ ] Eval Modal
-[ ] Eval Viewer
-[ ] Admin view
+- [ ] Sign up page
+- [ ] Course modal
+- [ ] Eval Modal
+- [ ] Eval Viewer
+- [ ] Admin view

@@ -50,18 +50,18 @@ function insertMaristRequirements(courses){
     writeLine(header);
     for (var i = 0; i < courses.length; i++){
         var course = courses[i];
-        var insertStatement = '("' + course.subject + '", "' + course.number + '", 3),' ;
+        var insertStatement = '(\'' + course.subject + '\', \'' + course.number + '\', 3),' ;
         writeLine(insertStatement);
     }
     writeLine(';\n');
 }
 
 function insertOtherCourses(courses){
-    var header = 'INSERT INTO Course (school, subject, courseNum, isAccepted) VALUES';
+    var header = 'INSERT INTO Course (ScID, subject, courseNum, isAccepted) VALUES';
     writeLine(header);
     for (var i = 0; i < courses.length; i++){
         var course = courses[i];
-        var insertStatement = '("Dutchess Community College", "' + course.subject + '", "' + course.number + '", true),' ;
+        var insertStatement = '(\'Dutchess\', \'' + course.subject + '\', \'' + course.number + '\', true),' ;
         writeLine(insertStatement);
     }
     writeLine(';\n');

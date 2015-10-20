@@ -36,7 +36,7 @@ CREATE TABLE Course(
 	ScID				int not null references School(ScID),
 	subject				text not null,
 	courseNum			text not null,
-	courseTitle			text not null,
+	courseTitle			text,
 	isAccepted			boolean not null
 );
 
@@ -57,7 +57,7 @@ CREATE TABLE Requirement(
 	subject 			text not null,
 	courseNum			text not null,
 	creditValue			int not null,
-	courseTitle			text not null
+	courseTitle			text
 );
 
 CREATE TABLE MajorRequirement(

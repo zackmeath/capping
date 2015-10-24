@@ -1,11 +1,11 @@
 - [x] Sign up page HTML/CSS
-- [ ] Sign up page JS
+- [ ] Sign up page JS (tie into Login system / CAS)
 - [x] StudentView HTML/CSS
-- [ ] StudentView JS
+- [ ] StudentView JS (live tables/ tie into Student tables)
 - [x] Course modal HTML/CSS
-- [ ] Course modal JS
-- [ ] Eval Modal HTML/CSS
-- [ ] Eval Modal JS
-- [ ] Eval Viewer?
-- [ ] Admin view
-- [ ] Admin view
+- [ ] Course modal JS (tie into courses table/ tie into student's courses table)
+- [ ] Eval Modal HTML/CSS (Build a rough view, unsure of final look)
+- [ ] Eval Modal JS (update based on students courses and major picked/ tie into saved eval table)
+- [ ] Eval Viewer? (part of eval modal? or seperate?)
+- [ ] Admin view HTML/CSS (Unsure of final looks)
+- [ ] Admin view JS (View a specific student? spoof student id? /overall statistics needed?)

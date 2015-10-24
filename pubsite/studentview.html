@@ -16,7 +16,7 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
     
     <link href="/css/bootstrap-combobox.css" media="screen" rel="stylesheet" type="text/css">
-    
+     
   
   </head>
   <body>
@@ -63,28 +63,34 @@
                     <h4 class="modal-title" id="myModalLabel">Add Courses</h4>
                   </div>
                   <div class="modal-body">
-                        <table class="table">
+                        <table class="table" id="courseTable">
                         <tbody>
                           <tr>
                             <td>
-<!--https://github.com/danielfarrell/bootstrap-combobox/-->
-                                <div class="combobox-container"> <input type="hidden" name="inline" value=""> 
-                                    <div class="input-group"> 
-                                        <input type="text" autocomplete="off" placeholder="Select a State" class="combobox form-control">
-                                        <ul class="typeahead typeahead-long dropdown-menu" style="top: 34px; left: 0px; display: none;">
-                                            <li data-value="Alabama" class="active">
-                                            <a href="#"><strong></strong>A<strong></strong>l<strong></strong>a<strong></strong>b<strong></strong>a<strong></strong>m<strong></strong>a<strong></strong></a></li>
-                                            <li data-value="Alaska">
-                                            <a href="#"><strong></strong>A<strong></strong>l<strong></strong>a<strong></strong>s<strong></strong>k<strong></strong>a<strong></strong></a></li>
-                                        </ul>  
-                                    </div>
-
+                                <input type="text" list="comboDept" placeholder="Department" id="deptT">
+                                    <datalist id="comboDept">
+                                        <option value="BUS">
+                                        <option value="CMPT">
+                                        <option value="CSMC">
+                                        <option value="HIST">
+                                    </datalist>
                             </td>
-                            <td>101</td>
-                            <td><a href="#blank">Delete</a></td>
+                            <td>
+                                <input type="text" list="comboCourse" placeholder="Course Number">
+                                    <datalist id="comboCourse">
+                                        <option value="101L">
+                                        <option value="110L">
+                                        <option value="201L">
+                                        <option value="310L">
+                                    </datalist>
+                            </td>
+                            <td>
+                                <a href="#blank">Delete</a>
+                            </td>
                           </tr>
                         </tbody>
                       </table>
+                      <button onclick="addCourseRow()">Add More Courses</button>
                   </div>
                   <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -153,15 +159,25 @@
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="js/bootstrap.min.js"></script>
-    <script src="/js/jquery-2.1.4.min.js" type="text/javascript"></script>
-    <script src="/js/bootstrap-combobox.js" type="text/javascript"></script>
-      
-    <script type="text/javascript">
-      $(document).ready(function(){
-        $('.combobox').combobox();
-      });
-    </script>
+    <script src="/js/bootstrap.min.js"></script>
 
+    <script>
+        function addCourseRow() {
+            var table = document.getElementById("courseTable");
+            var row = table.insertRow(0);
+            var cell1 = row.insertCell(0);
+            var cell2 = row.insertCell(1);
+            var cell3 = row.insertCell(2);
+
+            cell1.innerHTML = "a";
+            cell2.innerHTML = "s";
+            cell3.innerHTML = "c";
+        }
+    </script>   
+     
+    
+
+      
+      
   </body>
 </html>

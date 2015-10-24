@@ -1,5 +1,9 @@
-- [ ] Sign up page
-- [ ] Course modal
-- [ ] Eval Modal
-- [ ] Eval Viewer
+- [ ] Sign up page HTML/CSS
+- [ ] Sign up page JS
+- [ ] Course modal HTML/CSS
+- [ ] Course modal JS
+- [ ] Eval Modal HTML/CSS
+- [ ] Eval Modal JS
+- [ ] Eval Viewer?
+- [ ] Admin view
 - [ ] Admin view

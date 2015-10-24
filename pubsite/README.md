@@ -1,6 +1,8 @@
-- [ ] Sign up page HTML/CSS
+- [x] Sign up page HTML/CSS
 - [ ] Sign up page JS
-- [ ] Course modal HTML/CSS
+- [x] StudentView HTML/CSS
+- [ ] StudentView JS
+- [x] Course modal HTML/CSS
 - [ ] Course modal JS
 - [ ] Eval Modal HTML/CSS
 - [ ] Eval Modal JS

@@ -39,7 +39,7 @@
                 <th>Subject</th>
                 <th>Course Number</th>
                 <th>Course Name</th>
-                <th> <button type="button" class="btn btn-success" data-toggle="modal" data-target="#coursesModal">Add Courses</button> </th>
+                <th> <button type="button" class="btn btn-success" data-toggle="modal" data-target="#coursesModal" style="float: right;">Add Courses</button> </th>
               </tr>
             </thead>
             <tbody>
@@ -66,7 +66,7 @@
                         <tbody>
                           <tr>
                             <td>
-                                <input type="text" list="comboDept" placeholder="Department" id="deptT">
+                                <input type="text" class="form-control" list="comboDept" placeholder="Department" id="deptT">
                                     <datalist id="comboDept">
                                         <option value="BUS">
                                         <option value="CMPT">
@@ -75,7 +75,7 @@
                                     </datalist>
                             </td>
                             <td>
-                                <input type="text" list="comboCourse" placeholder="Course Number" id="courseT">
+                                <input type="text" class="form-control" list="comboCourse" placeholder="Course Number" id="courseT">
                                     <datalist id="comboCourse">
                                         <option value="101L">
                                         <option value="110L">
@@ -89,9 +89,12 @@
                           </tr>
                         </tbody>
                       </table>
-                      <button onclick="addCourseRow()">Add More Courses</button>
+                      
+                      
                   </div>
                   <div class="modal-footer">
+                    <button type="button" class="btn btn-default" onclick="addCourseRow()" style="float: left;">Add More Courses</button>
+                    <button type="button" class="btn btn-success" onclick="" >Submit Courses</button>
                     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                   </div>
                 </div>
@@ -108,7 +111,7 @@
                 <th>Major</th>
                 <th>Credits Accepted</th>
                 <th>Date Created</th>
-                <th> <button type="button" class="btn btn-success" data-toggle="modal" data-target="#evalModal">New Evaluation</button> </th>
+                <th> <button type="button" class="btn btn-success" data-toggle="modal" data-target="#evalModal" style="float: right;">New Evaluation</button> </th>
               </tr>
             </thead>
             <tbody>
@@ -172,12 +175,14 @@
 
             var input1 = document.createElement("input");
             input1.type="text";
+            input1.setAttribute("class","form-control");
             input1.setAttribute("list", "comboDept");
             input1.placeholder="Department";
             input1.id="deptT";
             
             var input2 = document.createElement("input");
             input2.type="text";
+            input2.setAttribute("class","form-control");
             input2.setAttribute("list", "comboCourse");
             input2.placeholder="Course Number";
             input2.id="courseT";

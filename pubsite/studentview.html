@@ -15,8 +15,7 @@
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
     
-     
-  
+
   </head>
   <body>
 
@@ -31,6 +30,7 @@
       </div>
     </nav>
 
+      <!-- COURSES body -->
     <div class="container">
         <h1>Courses</h1>
         <table class="table table-hover table-bordered table-responsive">
@@ -53,7 +53,7 @@
           </table>
     </div>
 
-            <!-- Modal -->
+            <!-- COURSES Modal -->
             <div class="modal fade" id="coursesModal" tabindex="-1" role="dialog" aria-labelledby="coursesModal">
               <div class="modal-dialog" role="document">
                 <div class="modal-content">
@@ -102,7 +102,7 @@
             </div>
       
 
-      
+    <!-- EVAL Body -->  
     <div class="container">
         <h1>Evaluations</h1>
         <table class="table table-hover table-bordered table-responsive">
@@ -124,9 +124,8 @@
             </tbody>
           </table>
     </div>
-    
-      
-              <!-- Modal -->
+       
+              <!-- EVAL Modal -->
             <div class="modal fade" id="evalModal" tabindex="-1" role="dialog" aria-labelledby="evalModal">
               <div class="modal-dialog" role="document">
                 <div class="modal-content">
@@ -135,7 +134,45 @@
                     <h4 class="modal-title" id="myModalLabel">New Evaluation</h4>
                   </div>
                   <div class="modal-body">
-                    ...
+                    
+                        <label class="col-xs-3 control-label" style="padding-top: 5px;">Intended Major</label>
+                          <div class="col-xs-5 selectContainer">
+                            <select class="form-control" id="major">
+                              <option value="CS">CS</option>
+                              <option value="IT">IT</option>
+                              <option value="IS">IS</option>
+                              <option value="Business">Business</option>
+                              <option value="Finance">Finance</option>
+                              <option value="Procrastination">Procrastination</option>
+                            </select>
+                          </div>                 
+                      <br>
+                      <br>
+                      
+                      <table class="table table-hover table-bordered table-responsive">
+                            <thead>
+                              <tr>
+                                <th>DCC Course</th>
+                                <th>Does it Transfer</th>
+                                <th>Marist Course</th>
+                                <th>Credits</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                <td>ART 101</td>
+                                <td>Yes</td>
+                                <td>ART 101</td>
+                                <td>3</td>
+                              </tr>
+                            </tbody>
+                        </table>
+                      
+                    <div>
+                    <h2>3 Credits Applied</h2>
+                    </div>
+                      
+
                   </div>
                   <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -143,9 +180,7 @@
                 </div>
               </div>
             </div>
-      
-      
-      
+
       
     <!--
     <BootstrapTable data={products} striped={true} hover={true} condensed={true}>
@@ -155,16 +190,11 @@
     </BootstrapTable>
     -->  
       
-      
-      
-      
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
-
-
-      
+ 
     <script>
         function addCourseRow() {
             var table = document.getElementById("courseTable");
@@ -199,9 +229,6 @@
         
     </script>   
      
-    
-
-      
-      
+   
   </body>
 </html>

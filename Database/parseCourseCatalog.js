@@ -22,7 +22,7 @@ fs.readFile('catalog-test.md', 'utf8', function(err, data){
             if (line.startsWith('#')) {
                 major = line.replace(/\#\s/, '');
                 majors.push(major);
-                mid = majors.length - 1;
+                mid = majors.length;
                 writeLine("INSERT INTO Major (subject) VALUES ('" + major + "');");
             } else if (line.startsWith('-')) {
                 var course;

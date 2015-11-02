@@ -7,7 +7,7 @@ function writeLine(line){
     fs.appendFileSync('major-requirements-insert-statements.txt', line + '\n');
 }
 
-fs.writeFileSync('InsertStatements.txt', '');
+fs.writeFileSync('major-requirements-insert-statements.txt', '');
 fs.readFile('catalog-test.md', 'utf8', function(err, data){
     if (err) {
         console.log(err);
@@ -48,7 +48,7 @@ fs.readFile('catalog-test.md', 'utf8', function(err, data){
                     courses.push(course);
                     rid = courses.length - 1;
                     writeLine("INSERT INTO Requirement (subject, courseNum, creditValue, courseTitle) "
-                          + " VALUES ('" + subject +"' , '" + courseNum + "', " + credits + ", " + courseTitle + "');");
+                          + " VALUES ('" + subject +"' , '" + courseNum + "', " + credits + ", '" + courseTitle + "');");
                 }
                 writeLine("INSERT INTO MajorRequirement (MID, RID) VALUES (" + mid + ", " + rid + ");");
             }

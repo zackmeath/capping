@@ -14,7 +14,7 @@ fs.readFile('catalog-test.md', 'utf8', function(err, data){
     } else {
         var lines = data.split('\n');
 
-        var mid = 0;
+        var mid = 1;
         var major = "";
         for (var i = 0; i < lines.length; i++) {
             var line = lines[i];
@@ -46,7 +46,7 @@ fs.readFile('catalog-test.md', 'utf8', function(err, data){
                     course.courseTitle = courseTitle;
                     course.credits = credits;
                     courses.push(course);
-                    rid = courses.length - 1;
+                    rid = courses.length;
                     writeLine("INSERT INTO Requirement (subject, courseNum, creditValue, courseTitle) "
                           + " VALUES ('" + subject +"' , '" + courseNum + "', " + credits + ", '" + courseTitle + "');");
                 }

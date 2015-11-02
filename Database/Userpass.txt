@@ -1,3 +1,6 @@
 PostgreSQL User\Password:
 User: postgres
 Password: postgresCAPPING
+
+User: capping
+Password: postgres123

@@ -33,6 +33,9 @@
       <!-- COURSES body -->
     <div class="container">
         <h1>Courses</h1>
+        <div id="reactCourses">
+            
+<!--
         <table class="table table-hover table-bordered table-responsive">
             <thead>
               <tr>
@@ -51,8 +54,10 @@
               </tr>
             </tbody>
           </table>
-    </div>
+-->
 
+        </div>
+      </div>
             <!-- COURSES Modal -->
             <div class="modal fade" id="coursesModal" tabindex="-1" role="dialog" aria-labelledby="coursesModal">
               <div class="modal-dialog" role="document">
@@ -105,6 +110,9 @@
     <!-- EVAL Body -->  
     <div class="container">
         <h1>Evaluations</h1>
+        <div id="reactEvaluations">
+            
+<!--
         <table class="table table-hover table-bordered table-responsive">
             <thead>
               <tr>
@@ -123,8 +131,10 @@
               </tr>
             </tbody>
           </table>
-    </div>
-       
+-->
+            
+        </div>
+     </div>  
               <!-- EVAL Modal -->
             <div class="modal fade" id="evalModal" tabindex="-1" role="dialog" aria-labelledby="evalModal">
               <div class="modal-dialog" role="document">
@@ -149,6 +159,11 @@
                       <br>
                       <br>
                       
+                      <div id="reactNewEval">
+                      
+                      </div>
+                      
+<!--        
                       <table class="table table-hover table-bordered table-responsive">
                             <thead>
                               <tr>
@@ -167,11 +182,9 @@
                               </tr>
                             </tbody>
                         </table>
+-->
                       
-                    <div>
-                    <h2>3 Credits Applied</h2>
-                    </div>
-                      
+                                          
 
                   </div>
                   <div class="modal-footer">
@@ -181,6 +194,7 @@
               </div>
             </div>
 
+<!--
       <div class="container">
           <h1>React Testing</h1>
           <div id="tableTest">
@@ -194,21 +208,17 @@
             
           </div>
       </div>
+-->
       
-    <!--
-    <BootstrapTable data={products} striped={true} hover={true} condensed={true}>
-      <TableHeaderColumn dataField="id" isKey={true}>Product ID</TableHeaderColumn>
-      <TableHeaderColumn dataField="name">Product Name</TableHeaderColumn>
-      <TableHeaderColumn dataField="price">Product Price</TableHeaderColumn>
-    </BootstrapTable>
-    -->  
+
       
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
-    <script src="js/tableTest.js" type="text/jsx"></script>
-    <script src="js/dataTest.js" type="text/jsx"></script>
+    <script src="js/reactCourses.js" type="text/jsx"></script>
+    <script src="js/reactEvaluations.js" type="text/jsx"></script>
+    <script src="js/reactNewEval.js" type="text/jsx"></script>
  
     <script>
         function addCourseRow() {

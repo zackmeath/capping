@@ -55,8 +55,8 @@ var CourseList = React.createClass({
     return (
       <tbody className="CourseList">
           {
-              this.props.data.coursesData.map(function(player) {
-                return <tr key={player.id}><td>{player.subject}</td><td>{player.number}</td><td>{player.name}</td><td> <a href="#blank">Edit</a> | <a href="#blank">Delete</a> </td></tr>
+              this.props.data.coursesData.map(function(course) {
+                return <tr key={course.id}><td>{course.subject}</td><td>{course.number}</td><td>{course.name}</td><td> <a href="#blank">Edit</a> | <a href="#blank">Delete</a> </td></tr>
               })
           }  
       </tbody>
@@ -68,5 +68,4 @@ var buttonStyle = {
   float: 'right'
 };
 
-
-React.render(<Courses />, document.getElementById('dataTest'));
+React.render(<Courses />, document.getElementById('reactCourses'));

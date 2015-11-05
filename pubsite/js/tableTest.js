@@ -1,32 +1,48 @@
 /**
  * @jsx React.DOM
  */
-var Books = React.createClass({
+var Courses = React.createClass({
   render: function() {
     return (
-      <table>
-        <thead>
-          <tr>
-            <th>Title</th>
-          </tr>
-        </thead>
-        <tbody>
-          <Book title='Professional Node.js'></Book>
-          <Book title='Node.js Patterns'></Book>
-        </tbody>
-      </table>
+      <table className="table table-hover table-bordered table-responsive">
+            <thead>
+              <tr>
+                <th>Subject</th>
+                <th>Course Number</th>
+                <th>Course Name</th>
+                <th> <button type="button" className="btn btn-success" data-toggle="modal" data-target="#coursesModal" style={buttonStyle} >Add Courses</button> </th>
+              </tr>
+            </thead>
+            <tbody>
+                <tr><Course subject='CMPT' number='101' name='Intro to Adventure Games'></Course></tr>
+                <tr><Course subject='CMPT' number='101' name='Intro to Adventure Games'></Course></tr>
+                <tr><Course subject='BUSI' number='101' name='Intro to Adventure Games'></Course></tr>
+                <tr><Course subject='ART' number='101' name='Intro to Adventure Games'></Course></tr>
+            </tbody>
+          </table>
+        
     );
   }
 });
 
-var Book = React.createClass({
+var Course = React.createClass({
   render: function() {
     return (
       <tr>
-        <td>{this.props.title}</td>
+        <td>{this.props.subject}</td>
+        <td>{this.props.number}</td>
+        <td>{this.props.name}</td>
+        <td> <a href="#blank">Edit</a> | <a href="#blank">Delete</a> </td>
       </tr>
     );
   }
 });
 
-React.render(<Books />, document.getElementById('tableTest'));
+var buttonStyle = {
+  float: 'right'
+};
+
+
+
+React.render(<Courses />, document.getElementById('tableTest'));
+

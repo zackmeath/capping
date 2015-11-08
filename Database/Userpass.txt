@@ -4,3 +4,5 @@ Password: postgresCAPPING
 
 User: capping
 Password: postgres123
+
+DB: cappingdb

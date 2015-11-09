@@ -1,20 +1,32 @@
 /**
  * @jsx React.DOM
  */
-//Load in the api to build the data object
-var data = {
-    "coursesData": [{
-      id: 1,
-      subject: "CMPT",
-      number: "101L",
-      name: "Intro to Adventure Games"
-  },{
-      id: 2,
-      subject: "BUS",
-      number: "110L",
-      name: "Intro to Business"
-  }]
-};
+//Load in the api to build the data object 
+var data;
+$(document).ready(function() {
+    jQuery.ajax( {
+    url: "http://capping.xyz:3000/api/courses",
+    type: "GET",
+    crossDomain: true, 
+    contentType: "text/plain; charset=utf-8",
+    dataType: "json",
+    success: function( response ) {
+        console.log(response);
+       data = response;
+    },
+    xhrFields: {
+    // The 'xhrFields' property sets additional fields on the XMLHttpRequest.
+    // This can be used to set the 'withCredentials' property.
+    // Set the value to 'true' if you'd like to pass cookies to the server.
+    // If this is enabled, your server must respond with the header
+    // 'Access-Control-Allow-Credentials: true'.
+        withCredentials: false
+    }
+});
+   
+});
+
+
 
 var Courses = React.createClass({
 
@@ -51,12 +63,12 @@ var Courses = React.createClass({
 var CourseList = React.createClass({
 
   render: function() {
-    console.log(this.props.data.coursesData);
+   
     return (
       <tbody className="CourseList">
           {
               this.props.data.coursesData.map(function(course) {
-                return <tr key={course.id}><td>{course.subject}</td><td>{course.number}</td><td>{course.name}</td><td> <a href="#blank">Edit</a> | <a href="#blank">Delete</a> </td></tr>
+                return <tr key={course.cid}><td>{course.subject}</td><td>{course.coursenum}</td><td>{course.title}</td><td> <a href="#blank">Edit</a> | <a href="#blank">Delete</a> </td></tr>
               })
           }  
       </tbody>

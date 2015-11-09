@@ -1,5 +1,6 @@
 -- Dropping Tables if They Exist --
 DROP TABLE IF EXISTS CoursesTaken;
+DROP TABLE IF EXISTS studentMajors;
 DROP TABLE IF EXISTS Student;
 DROP TABLE IF EXISTS Equivalent;
 DROP TABLE IF EXISTS Course;
@@ -45,6 +46,13 @@ CREATE TABLE CoursesTaken(
 	CID					int not null references Course(CID),
 	
 	primary key(StID, CID)
+);
+
+CREATE TABLE studentMajors(
+	StID				int not null references Student(StID),
+	MID					int not null references Major(MID),
+	
+	primary key(StID, MID)
 );
 
 CREATE TABLE Major(

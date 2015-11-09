@@ -29,7 +29,7 @@ CREATE TABLE School(
 CREATE TABLE Student(
 	StID				serial primary key references Users(UID),
 	currentCollege		int not null references School(ScID),
-	intendedStartDate	date not null
+	intendedStartDate	text not null
 );
 
 CREATE TABLE Course(

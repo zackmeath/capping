@@ -1,0 +1,26 @@
+*Student*
+GET PUT POST capping.xyz/students/{id}
+GET PUT POST capping.xyz/students/{id}/courses/{course}
+GET PUT POST capping.xyz/students/{id}/evals/{eval}
+
+*Course*
+GET PUT POST capping.xyz/courses/{id}
+
+
+*Courses Table*
+GET capping.xyz/students/{id}/courses/
+-courseSubject
+-courseNumber
+-courseName
+
+*Evaluation Table*
+GET capping.xyz/students/{id}/evals/
+-major
+-creditsAccepted
+-dateCreated
+
+
+*New Evaluation Table*
+
+
+

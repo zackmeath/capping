@@ -12,7 +12,7 @@ $(document).ready(function() {
     dataType: "json",
     success: function( response ) {
         console.log(response);
-       data = response;
+        data = response;
     },
     xhrFields: {
     // The 'xhrFields' property sets additional fields on the XMLHttpRequest.
@@ -36,7 +36,7 @@ var Courses = React.createClass({
   },
 
   getInitialState: function(){
-    return {data: {coursesData: []} };
+    return {data: {coursesData} };
   },
 
   componentDidMount: function() {

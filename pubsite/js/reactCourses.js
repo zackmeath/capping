@@ -2,7 +2,9 @@
  * @jsx React.DOM
  */
 //Load in the api to build the data object 
-var data;
+var data = new Object();
+data.coursesData = "scope error";
+
 $(document).ready(function() {
     jQuery.ajax( {
     url: "http://capping.xyz:3000/api/courses",
@@ -10,9 +12,11 @@ $(document).ready(function() {
     crossDomain: true, 
     contentType: "text/plain; charset=utf-8",
     dataType: "json",
+    async:false,
     success: function( response ) {
         console.log(response);
-        data = response;
+        data.coursesData = response;
+        
     },
     xhrFields: {
     // The 'xhrFields' property sets additional fields on the XMLHttpRequest.
@@ -36,6 +40,7 @@ var Courses = React.createClass({
   },
 
   getInitialState: function(){
+      console.log(data.coursesData);
     return {data: {coursesData} };
   },
 

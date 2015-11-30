@@ -1,9 +1,9 @@
 /**
  * @jsx React.DOM
  */
-//Load in the api to build the data object 
+//Load in the api to build the data object
 var data = new Object();
-data.coursesData = "scope error";
+
 
 $(document).ready(function() {
     jQuery.ajax( {
@@ -15,7 +15,7 @@ $(document).ready(function() {
     async:false,
     success: function( response ) {
         console.log(response);
-        data.coursesData = response;
+        data = response;
         
     },
     xhrFields: {
@@ -30,27 +30,28 @@ $(document).ready(function() {
    
 });
 
+var CourseRow = React.createClass({
+    render: function() {
+        return (
+            <tr>
+                <td>{this.props.courses.subject}</td>
+                <td>{this.props.courses.coursenum}</td>
+                <td>{this.props.courses.coursetitle}</td>
+                <td>  <a href="#blank">Edit</a> | <a href="#blank">Delete</a> </td>
+            </tr>
+        );
+    }
+});
 
-
-var Courses = React.createClass({
-
-  // get game info
-  loadCourses: function() {    
-    this.setState({data: data});
-  },
-
-  getInitialState: function(){
-      console.log(data.coursesData);
-    return {data: {coursesData} };
-  },
-
-  componentDidMount: function() {
-    this.loadCourses();
-  },
-
-  render: function() {
-    return (
-        <table className="table table-hover table-bordered table-responsive">
+var CourseTable = React.createClass({
+    render: function() {
+        var rows = [];
+        this.props.courses.forEach(function(courses) {
+            rows.push(<CourseRow courses={courses} key={courses.cid} />);
+        }.bind(this));
+        return (
+            
+            <table className="table table-hover table-bordered table-responsive">
             <thead>
               <tr>
                 <th>Subject</th>
@@ -59,30 +60,37 @@ var Courses = React.createClass({
                 <th> <button type="button" className="btn btn-success" data-toggle="modal" data-target="#coursesModal" style={buttonStyle} >Add Courses</button> </th>
               </tr>
             </thead>
-                <CourseList data={this.state.data}/> 
+                <tbody>{rows}</tbody>
           </table>
-    );
-  }
+            
+            
+        );
+    }
 });
-
-var CourseList = React.createClass({
-
-  render: function() {
-   
-    return (
-      <tbody className="CourseList">
-          {
-              this.props.data.coursesData.map(function(course) {
-                return <tr key={course.cid}><td>{course.subject}</td><td>{course.coursenum}</td><td>{course.title}</td><td> <a href="#blank">Edit</a> | <a href="#blank">Delete</a> </td></tr>
-              })
-          }  
-      </tbody>
-    )
-  }
-});
-
+        
 var buttonStyle = {
   float: 'right'
 };
 
-React.render(<Courses />, document.getElementById('reactCourses'));
+
+
+var AllCourseTable = React.createClass({
+    render: function() {
+        return (
+            <div>
+                <CourseTable courses={this.props.courses}/>
+            </div>
+        );
+    }
+});
+
+
+
+React.render(
+    <AllCourseTable courses={data} />,
+    document.getElementById('reactCourses')
+);
+
+        
+        
+    

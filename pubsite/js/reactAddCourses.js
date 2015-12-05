@@ -1,4 +1,4 @@
-var data = new Object();
+var addcoursedata = new Object();
 
 
 $(document).ready(function() {
@@ -10,8 +10,8 @@ $(document).ready(function() {
     dataType: "json",
     async:false,
     success: function( response ) {
-        console.log(response);
-        data = response;
+        //console.log(response);
+        addcoursedata = response;
         loadDept();
         
     },
@@ -28,11 +28,11 @@ $(document).ready(function() {
    
 function loadDept(){
     var alldepts = [];
-    data.forEach( function (item){
+    addcoursedata.forEach( function (item){
      var x = item.subject;
         alldepts.push(x);
     });
-    console.log(alldepts);
+    //console.log(alldepts);
     
     var depts = [];
     $.each(alldepts, function(i, el){
@@ -41,8 +41,30 @@ function loadDept(){
     
     var options = '';
   for(var i = 0; i < depts.length; i++){
-    options += '<option value="'+depts[i]+'" />';
+    options += '<option value="'+depts[i]+'" />'+depts[i]+'</option>';
   }
     
-  document.getElementById('comboDept').innerHTML = options;
+  document.getElementById('deptT').innerHTML = options;
+}
+
+
+function updateNums(element){
+    var nums = [];
+    //console.log(addcoursedata);
+    addcoursedata.forEach( function (item){
+        //console.log(item.subject);
+        //console.log(element.value);
+        if(item.subject == element.value){
+            nums.push(item.coursenum);
+        }
+    });
+    console.log(nums);
+    
+    var options = '';
+  for(var i = 0; i < nums.length; i++){
+    options += '<option value="'+nums[i]+'" />'+nums[i]+'</option>';
+  }
+    
+  document.getElementById('courseT').innerHTML = options;
+    
 }

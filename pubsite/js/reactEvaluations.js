@@ -2,7 +2,7 @@
  * @jsx React.DOM
  */
 //Load in the api to build the data object
-var data = new Object();
+var evaldata = new Object();
 
 
 $(document).ready(function() {
@@ -14,8 +14,8 @@ $(document).ready(function() {
     dataType: "json",
     async:false,
     success: function( response ) {
-        console.log(response);
-        data = response;
+        //console.log(response);
+        evaldata = response;
         
     },
     xhrFields: {
@@ -87,7 +87,7 @@ var AllCourseTable = React.createClass({
 
 
 React.render(
-    <AllCourseTable courses={data} />,
+    <AllCourseTable courses={evaldata} />,
     document.getElementById('reactEvaluations')
 );
 

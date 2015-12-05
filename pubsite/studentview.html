@@ -15,6 +15,7 @@
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
     
+    
 
   </head>
   <body>
@@ -70,13 +71,26 @@
                         <table class="table" id="courseTable">
                         <tbody>
                           <tr>
-                            <td>
+                            <td>                   
+                                <select class="form-control" placeholder="Department" id="deptT" onchange="updateNums(this);">
+                                    
+                                  </select>
+                                
+                                
+<!--
                                 <input type="text" class="form-control" list="comboDept" placeholder="Department" id="deptT">
                                     <datalist id="comboDept">
                                         
                                     </datalist>
+-->
                             </td>
+
                             <td>
+                                <select class="form-control" placeholder="Course Number" id="courseT">
+                                    
+                                  </select>
+                                
+<!--                                
                                 <input type="text" class="form-control" list="comboCourse" placeholder="Course Number" id="courseT">
                                     <datalist id="comboCourse">
                                         <option value="101L">
@@ -84,6 +98,7 @@
                                         <option value="201L">
                                         <option value="310L">
                                     </datalist>
+-->
                             </td>
                             <td>
                                 <a href="#blank">Delete</a>
@@ -255,8 +270,9 @@
         }
         
         
-    </script>   
-     
+    </script> 
+      
+    
    
   </body>
 </html>

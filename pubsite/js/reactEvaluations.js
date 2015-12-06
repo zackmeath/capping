@@ -7,7 +7,7 @@ var evaldata = new Object();
 
 $(document).ready(function() {
     jQuery.ajax( {
-    url: "http://capping.xyz:3000/api/courses",
+    url: "http://capping.xyz:3000/api/students/20/courses/",
     type: "GET",
     crossDomain: true, 
     contentType: "text/plain; charset=utf-8",

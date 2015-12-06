@@ -153,19 +153,19 @@ function submitCourses() {
         }
     
     console.log(cids);
-    
+    var y = cids[0];
     
     jQuery.ajax( {
-    url: "http://capping.xyz:3000/api/student/20/courses/",
-    type: "GET",
+    url: "http://capping.xyz:3000/api/students/20/courses/",
+    type: "POST",
     crossDomain: true, 
     contentType: "text/plain; charset=utf-8",
+    data: y,
     dataType: "json",
     async:false,
     success: function( response ) {
-        //console.log(response);
-        addcoursedata = response;
-        loadDept();
+        console.log(updated);
+        
         
     },
     xhrFields: {

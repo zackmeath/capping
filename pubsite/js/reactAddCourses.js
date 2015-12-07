@@ -153,14 +153,17 @@ function submitCourses() {
         }
     
     console.log(cids);
-    var y = cids[0];
+    var cidobj = {courses : cids};
+    console.log(cidobj);
+    console.log(cidobj.courses);
+    //var courses = cids;
     
     jQuery.ajax( {
     url: "http://capping.xyz:3000/api/students/20/courses/",
     type: "POST",
     crossDomain: true, 
-    contentType: "text/plain; charset=utf-8",
-    data: y,
+//    contentType: "text/plain; charset=utf-8",
+    data: cidobj,
     dataType: "json",
     async:false,
     success: function( response ) {

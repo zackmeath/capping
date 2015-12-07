@@ -16,7 +16,7 @@ function loginUser() {
     dataType: "json",
     async:false,
     success: function( response ) {
-        window.location.replace("http://capping.xyz/studentview.html");
+        
         
     },
     xhrFields: {
@@ -29,7 +29,7 @@ function loginUser() {
     }
 });
     
-    
+    window.location.replace("http://capping.xyz/studentview.html");
     
     
     

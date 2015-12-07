@@ -48,7 +48,7 @@ function createUser() {
     dataType: "json",
     async:false,
     success: function( response ) {
-        console.log(updated);
+        //console.log(updated);
         
         
     },

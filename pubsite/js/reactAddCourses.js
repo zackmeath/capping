@@ -167,8 +167,8 @@ function submitCourses() {
     dataType: "json",
     async:false,
     success: function( response ) {
-        console.log(updated);
-        
+        //console.log(updated);
+        window.location.reload(false); 
         
     },
     xhrFields: {

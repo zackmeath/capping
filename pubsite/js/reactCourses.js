@@ -31,19 +31,26 @@ $(document).ready(function() {
 });
 
 var CourseRow = React.createClass({
+    show: function(item){
+    console.log(this.props.courses.cid);
+    deleteCourse(this.props.courses.cid);
+  },
+    
     render: function() {
         return (
             <tr>
                 <td>{this.props.courses.subject}</td>
                 <td>{this.props.courses.coursenum}</td>
                 <td>{this.props.courses.coursetitle}</td>
-                <td>  <a href="#blank">Edit</a> | <a href="#blank">Delete</a> </td>
+                <td> <a href="#blank" onClick={this.show.bind(this)}>Delete</a> </td>
             </tr>
         );
     }
 });
 
+
 var CourseTable = React.createClass({
+    
     render: function() {
         var rows = [];
         this.props.courses.forEach(function(courses) {

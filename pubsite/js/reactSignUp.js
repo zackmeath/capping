@@ -49,7 +49,7 @@ function createUser() {
     async:false,
     success: function( response ) {
         //console.log(updated);
-        
+        document.getElementById("regStaus").innerHTML = "Successfuly Registered";
         
     },
     xhrFields: {

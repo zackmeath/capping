@@ -1,6 +1,11 @@
+var studentid = 20;
+if( getCookie("studentid") != ""){
+   studentid = getCookie("studentid");
+}
+
 function deleteCourse(cid){
     console.log(cid);
-    var urlS = "http://capping.xyz:3000/api/students/20/courses/" + cid;
+    var urlS = "http://capping.xyz:3000/api/students/"+ studentid +"/courses/" + cid;
     
     jQuery.ajax( {
     url: urlS,

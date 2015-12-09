@@ -3,11 +3,18 @@
  */
 //Load in the api to build the data object
 var coursedata = new Object();
-
+var studentid = 20;
+if( getCookie("studentid") != ""){
+   studentid = getCookie("studentid");
+    //console.log(studentid);
+} else {
+    //console.log(studentid);
+    window.location.replace("http://www.capping.xyz/login.html");
+}
 
 $(document).ready(function() {
     jQuery.ajax( {
-    url: "http://capping.xyz:3000/api/students/20/courses/",
+    url: "http://capping.xyz:3000/api/students/"+ studentid +"/courses/",
     type: "GET",
     crossDomain: true,
     contentType: "text/plain; charset=utf-8",
@@ -98,6 +105,14 @@ React.render(
     document.getElementById('reactCourses')
 );
 
-        
-        
+function getCookie(cname) {
+    var name = cname + "=";
+    var ca = document.cookie.split(';');
+    for(var i=0; i<ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0)==' ') c = c.substring(1);
+        if (c.indexOf(name) == 0) return c.substring(name.length,c.length);
+    }
+    return "";
+}       
     

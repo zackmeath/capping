@@ -1,24 +1,37 @@
 function loginUser() {
     
     var email = document.getElementById("signInEmail").value;
-    var pass = document.getElementById("signInPassword").value;
+    var password = document.getElementById("signInPassword").value;
     
-    console.log(email + " : " + pass)
+    console.log(email + " : " + password)
     
-    var studentobj = {email : email, pass : pass};
+    var studentobj = {email : email, password : password};
     console.log(studentobj);
     
     jQuery.ajax( {
-    url: "http://capping.xyz:3000/api/users/",
-    type: "GET",
+    url: "http://capping.xyz:3000/api/login/",
+    type: "POST",
     crossDomain: true, 
-    contentType: "text/plain; charset=utf-8",
+    //contentType: "text/plain; charset=utf-8",
+    data: studentobj,
     dataType: "json",
-    async:false,
+    async: false,
     success: function( response ) {
+        console.log(response);
+       if(response.success === true){
+           document.cookie= "studentid=" + response.id + "; path=/;";
+           console.log(document.cookie);
+           window.location.replace("http://www.capping.xyz/studentview.html");
+       } else {
+        alert(response.msg);   
+       }
         
         
     },
+    error: function(textStatus) {
+        console.log(textStatus);
+    },
+    
     xhrFields: {
     // The 'xhrFields' property sets additional fields on the XMLHttpRequest.
     // This can be used to set the 'withCredentials' property.
@@ -27,11 +40,6 @@ function loginUser() {
     // 'Access-Control-Allow-Credentials: true'.
         withCredentials: false
     }
-});
-    
-    window.location.replace("http://capping.xyz/studentview.html");
-    
-    
-    
+});  
     
 }

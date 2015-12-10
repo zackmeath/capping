@@ -3,10 +3,10 @@ function loginUser() {
     var email = document.getElementById("signInEmail").value;
     var password = document.getElementById("signInPassword").value;
     
-    console.log(email + " : " + password)
+    //console.log(email + " : " + password)
     
     var studentobj = {email : email, password : password};
-    console.log(studentobj);
+    //console.log(studentobj);
     
     jQuery.ajax( {
     url: "http://capping.xyz:3000/api/login/",
@@ -17,13 +17,14 @@ function loginUser() {
     dataType: "json",
     async: false,
     success: function( response ) {
-        console.log(response);
+        //console.log(response);
        if(response.success === true){
            document.cookie= "studentid=" + response.id + "; path=/;";
-           console.log(document.cookie);
+           //console.log(document.cookie);
            window.location.replace("http://www.capping.xyz/studentview.html");
        } else {
-        alert(response.msg);   
+        //alert(response.msg); 
+        document.getElementById("invalidEmail").style.display = "block";
        }
         
         

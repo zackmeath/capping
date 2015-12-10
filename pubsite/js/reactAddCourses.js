@@ -16,6 +16,7 @@ $(document).ready(function() {
         //console.log(response);
         addcoursedata = response;
         loadDept();
+        //updateNums( document.getElementById('courseT0'));
         
     },
     xhrFields: {
@@ -116,8 +117,7 @@ function addCourseRow() {
                         
             var input3 = document.createElement("a");
             input3.href="#blank";
-            input3.innerHTML = "Delete";
-            
+            input3.innerHTML = "";
             
             cell1.appendChild(input1);
             cell2.appendChild(input2);

@@ -9,35 +9,11 @@ function createUser() {
     var accessLevel = "1";
     var currentCollege = document.getElementById("currentCollege").value;
     
-    console.log(intendedStartDate + " : " + firstName + " : " + lastName + " : " +  email + " : " + pass + " : " + accessLevel + " : " + currentCollege)
+    //console.log(intendedStartDate + " : " + firstName + " : " + lastName + " : " +  email + " : " + pass + " : " + accessLevel + " : " + currentCollege)
     
     var studentobj = {intendedStartDate : intendedStartDate, firstName : firstName, lastName : lastName,
                       email : email, pass : pass, accessLevel : accessLevel, currentCollege : currentCollege};
-    console.log(studentobj);
-    /*
-    jQuery.ajax( {
-    url: "http://capping.xyz:3000/api/students/",
-    type: "GET",
-    crossDomain: true, 
-    contentType: "text/plain; charset=utf-8",
-    dataType: "json",
-    async:false,
-    success: function( response ) {
-        console.log(updated);
-        
-        
-    },
-    xhrFields: {
-    // The 'xhrFields' property sets additional fields on the XMLHttpRequest.
-    // This can be used to set the 'withCredentials' property.
-    // Set the value to 'true' if you'd like to pass cookies to the server.
-    // If this is enabled, your server must respond with the header
-    // 'Access-Control-Allow-Credentials: true'.
-        withCredentials: false
-    }
-});
-    */
-    
+    //console.log(studentobj);
     
     jQuery.ajax( {
     url: "http://capping.xyz:3000/api/students/",
@@ -49,8 +25,7 @@ function createUser() {
     async:false,
     success: function( response ) {
         //console.log(updated);
-        document.getElementById("regStaus").innerHTML = "Successfuly Registered";
-        
+            document.getElementById("regStatus").style.display = "block";        
     },
     xhrFields: {
     // The 'xhrFields' property sets additional fields on the XMLHttpRequest.

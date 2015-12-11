@@ -3,11 +3,15 @@
  */
 //Load in the api to build the data object
 var evaldata = new Object();
-
+var studentid = 20;
+if( getCookie("studentid") != ""){
+   studentid = getCookie("studentid");
+    //console.log(studentid);
+}
 
 $(document).ready(function() {
     jQuery.ajax( {
-    url: "http://capping.xyz:3000/api/students/20/courses/",
+    url: "http://capping.xyz:3000/api/students/"+ studentid +"/courses/",
     type: "GET",
     crossDomain: true, 
     contentType: "text/plain; charset=utf-8",
@@ -37,7 +41,7 @@ var CourseRow = React.createClass({
                 <td>{this.props.courses.subject}</td>
                 <td>{this.props.courses.coursenum}</td>
                 <td>{this.props.courses.coursetitle}</td>
-                <td>  <a href="#blank">Edit</a> | <a href="#blank">Delete</a> </td>
+                <td></td>
             </tr>
         );
     }

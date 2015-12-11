@@ -34,7 +34,9 @@
 
       <!-- COURSES body -->
     <div class="container">
-        <h1>Courses</h1>
+        <h1>Courses <button type="button" class="btn btn-success" data-toggle="modal" data-target="#evalModal" style="float:right;">New Evaluation</button></h1> 
+        
+        
         <div id="reactCourses">
             
 <!--
@@ -67,6 +69,7 @@
                   <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                     <h4 class="modal-title" id="myModalLabel">Add Courses</h4>
+                      
                   </div>
                   <div class="modal-body">
                         <table class="table" id="courseTable">
@@ -145,9 +148,11 @@
       
 
     <!-- EVAL Body -->  
+<!--
     <div class="container">
         <h1>Evaluations</h1>
         <div id="reactEvaluations">
+-->
             
 <!--
         <table class="table table-hover table-bordered table-responsive">
@@ -252,7 +257,7 @@
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
     <script src="js/reactCourses.js" type="text/jsx"></script>
-    <script src="js/reactEvaluations.js" type="text/jsx"></script>
+<!--    <script src="js/reactEvaluations.js" type="text/jsx"></script>-->
     <script src="js/reactNewEval.js" type="text/jsx"></script>
     <script src="js/reactAddCourses.js"></script>
     <script src="js/reactDeleteCourse.js"></script>

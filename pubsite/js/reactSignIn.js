@@ -47,7 +47,7 @@ function loginUser() {
 
 $(document).ready(function(){
     deleteCookie("studentid");
-    window.location.replace("http://www.capping.xyz/login.html");
+    //window.location.replace("http://www.capping.xyz/login.html");
 });
 
 var deleteCookie = function(name) {

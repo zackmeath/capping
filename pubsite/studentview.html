@@ -26,7 +26,7 @@
         
         <ul class="nav navbar-nav">
         <li class="active"><a href="#">Home <span class="sr-only">(current)</span></a></li>
-        <li><a href="http://www.capping.xyz/404.html">404</a></li>
+            <li><a href="http://www.capping.xyz/404.html">404</a></li>
         <li><a href="#" onclick="logoutStudent()">Logout</a></li>    
         </ul>
       </div>
@@ -184,13 +184,8 @@
                     
                         <label class="col-xs-3 control-label" style="padding-top: 5px;">Intended Major</label>
                           <div class="col-xs-5 selectContainer">
-                            <select class="form-control" id="major">
-                              <option value="CS">CS</option>
-                              <option value="IT">IT</option>
-                              <option value="IS">IS</option>
-                              <option value="Business">Business</option>
-                              <option value="Finance">Finance</option>
-                              <option value="Procrastination">Procrastination</option>
+                            <select class="form-control" id="major" onchange="runEval()">
+                              
                             </select>
                           </div>                 
                       <br>
